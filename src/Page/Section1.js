@@ -6,7 +6,7 @@ export default function Section1() {
       <section
         className="section-1 d-flex align-items-center"
         style={{
-          backgroundImage: `url('image/1.jpg')`,
+          backgroundImage: `url('image/1.jpeg')`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
