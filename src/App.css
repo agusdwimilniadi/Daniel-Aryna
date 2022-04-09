@@ -40,12 +40,19 @@
 .font-primary {
   font-family: "Numans", sans-serif;
 }
-.section-1 {
+.section-1,
+.section-0 {
   font-family: "Courier New", Courier, monospace;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.541);
 }
-
+.section-0 {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  left: 0;
+  width: 100%;
+}
 .countdown {
   width: 100%;
 }
@@ -71,7 +78,15 @@
   margin-bottom: 0;
   color: white;
 }
-
+.container-auto {
+  margin-top: 8%;
+}
+.heading-1-0 {
+  font-family: "Numans", sans-serif;
+  font-size: 30px;
+  color: white;
+  font-weight: 700;
+}
 .heading-1 {
   font-family: "Numans", sans-serif;
   font-size: 15px;
