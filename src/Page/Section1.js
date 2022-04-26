@@ -1,6 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import $ from "jquery";
+import daniel from "../image/daniel 1.png";
+import aryna from "../image/aryna 1.png";
+
 export default function Section1() {
   function play() {
     var audio = document.getElementById("audio");
@@ -106,6 +109,244 @@ export default function Section1() {
               >
                 Save The Date
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section-2" style={{ backgroundColor: "#F7EEE6" }}>
+        <div className="container">
+          <div className="row " style={{ height: "100vh" }}>
+            <div className="col-md-6 text-center d-flex align-items-center">
+              <div className="mt-5">
+                <img
+                  src={daniel}
+                  alt=""
+                  width={"30%"}
+                  className="img-fluid mb-2"
+                  style={{ borderRadius: "50%", border: "3px solid #A9865B" }}
+                />
+                <h1
+                  className="mt-3 text-center mb-3 fs-1"
+                  style={{ fontFamily: "Playfair Display", color: "#A9865B" }}
+                >
+                  Daniel Firman Syahroni
+                </h1>
+                <p
+                  className="mb-3"
+                  style={{
+                    fontFamily: '"Numans", Sans-serif',
+                    color: "#634837",
+                  }}
+                >
+                  Anak pertama dari:
+                </p>
+                <p
+                  style={{
+                    fontFamily: "Playfair Display",
+                    fontStyle: "italic",
+                    color: "#634837",
+                    fontSize: "25px",
+                    lineHeight: "0.8em",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  Sareh, M.Pd
+                </p>
+                <p
+                  style={{
+                    fontFamily: "Playfair Display",
+                    fontStyle: "italic",
+                    color: "#634837",
+                    fontSize: "25px",
+                    lineHeight: "0.8em",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  &
+                </p>
+                <p
+                  style={{
+                    fontFamily: "Playfair Display",
+                    fontStyle: "italic",
+                    color: "#634837",
+                    fontSize: "25px",
+                    lineHeight: "0.8em",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  Endang Ismiwati, S.Pd
+                </p>
+              </div>
+            </div>
+            <div className="col-md-6 text-center d-flex align-items-center">
+              <div className="mt-5">
+                <img
+                  src={aryna}
+                  alt=""
+                  width={"30%"}
+                  className="img-fluid mb-2"
+                  style={{ borderRadius: "50%", border: "3px solid #A9865B" }}
+                />
+                <h1
+                  className="mt-3 text-center mb-3 fs-1"
+                  style={{ fontFamily: "Playfair Display", color: "#A9865B" }}
+                >
+                  Aryna Chintya Devi
+                </h1>
+                <p
+                  className="mb-3"
+                  style={{
+                    fontFamily: '"Numans", Sans-serif',
+                    color: "#634837",
+                  }}
+                >
+                  Anak pertama dari:
+                </p>
+                <p
+                  style={{
+                    fontFamily: "Playfair Display",
+                    fontStyle: "italic",
+                    color: "#634837",
+                    fontSize: "25px",
+                    lineHeight: "0.8em",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  Paryadi
+                </p>
+                <p
+                  style={{
+                    fontFamily: "Playfair Display",
+                    fontStyle: "italic",
+                    color: "#634837",
+                    fontSize: "25px",
+                    lineHeight: "0.8em",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  &
+                </p>
+                <p
+                  style={{
+                    fontFamily: "Playfair Display",
+                    fontStyle: "italic",
+                    color: "#634837",
+                    fontSize: "25px",
+                    lineHeight: "0.8em",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  Wijiningsih
+                </p>
+              </div>
+            </div>
+            <div className="col-md-12 text-center mb-5">
+              <div style={{ paddingTop: "10%" }}>
+                <img
+                  src="https://acarakami.com/wp-content/uploads/2020/10/icon-leaf-acarakami.svg"
+                  alt=""
+                  className="img-fluid "
+                />
+                <p className="font-primary text-center color-primary mt-3">
+                  "Dan segala sesuatu Kami ciptakan berpasang-pasangan supaya
+                  kamu mengingat kebesaran Allah"
+                </p>
+                <p className="font-secondary color-secondary">
+                  QS. Az-Zariyat Ayat 49
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="section-3"
+        style={{ height: "100vh", backgroundColor: "#634837" }}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-center">
+              <img
+                src="https://acarakami.com/wp-content/uploads/2020/10/icon-leaf-acarakami.svg"
+                alt=""
+                className="img-fluid my-4"
+              />
+              <p className="text-center font-primary text-white mb-4">
+                God Almighty mercy and blessing, we intend to hold a Wedding for
+                our son and daughter <br /> which, God willing, will be held on:
+              </p>
+
+              <div className="pt-4 ">
+                <h2 className="date fs-5">SUNDAY</h2>
+                <h2 className="date fs-5">19 / MEI / 2022</h2>
+                <img
+                  src="https://acarakami.com/wp-content/uploads/2020/10/icon-leaf-acarakami.svg"
+                  alt=""
+                  className="img-fluid my-4"
+                />
+                <h2 className="date fs-5">TIME</h2>
+                <h2 className="date fs-5">10.00 WIB - FINISH</h2>
+                <img
+                  src="https://acarakami.com/wp-content/uploads/2020/10/icon-leaf-acarakami.svg"
+                  alt=""
+                  className="img-fluid my-4"
+                />
+                <h2 className="date fs-5">LOCATION</h2>
+                <h2 className="date fs-5">Jalan Musi Nomor 3 Begadung,</h2>
+                <h2 className="date fs-5 mb-5">
+                  Kecamatan Nganjuk, Kabupaten Nganjuk
+                </h2>
+                <p className="text-center font-primary text-white mb-4 mt-5">
+                  It is a joy and honor for us, if you are willing to give our
+                  children's blessings.
+                </p>
+                <p className="text-center font-primary text-white mb-4">
+                  We would be deeply grateful of your presence & blessings to
+                  our wedding
+                </p>
+                <img
+                  src="https://acarakami.com/wp-content/uploads/2020/10/icon-leaf-acarakami.svg"
+                  alt=""
+                  className="img-fluid my-4"
+                />
+                <h2 className="date fs-5">WE, THE HAPPY ONES</h2>
+                <p
+                  style={{
+                    fontFamily: "Playfair Display",
+                    fontStyle: "italic",
+                    fontSize: "18px",
+                    lineHeight: "0.8em",
+                    letterSpacing: "0.5px",
+                  }}
+                  className="text-white my-3"
+                >
+                  Family of Mr. Paryadi
+                </p>
+                <p
+                  style={{
+                    fontFamily: "Playfair Display",
+                    fontStyle: "italic",
+                    fontSize: "18px",
+                    lineHeight: "0.8em",
+                    letterSpacing: "0.5px",
+                  }}
+                  className="text-white my-3"
+                >
+                  &
+                </p>
+                <p
+                  style={{
+                    fontFamily: "Playfair Display",
+                    fontStyle: "italic",
+                    fontSize: "18px",
+                    lineHeight: "0.8em",
+                    letterSpacing: "0.5px",
+                  }}
+                  className="text-white my-3"
+                >
+                  Family of Mr. Sareh, M.Pd
+                </p>
+              </div>
             </div>
           </div>
         </div>

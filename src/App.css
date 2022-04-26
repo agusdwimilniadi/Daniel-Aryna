@@ -38,10 +38,14 @@
 }
 
 .font-primary {
-  font-family: "Numans", sans-serif;
+  font-family: "Numans", sans-serif !important;
+}
+.font-secondary {
+  font-family: "Playfair Display", serif !important;
 }
 .section-1,
-.section-0 {
+.section-0,
+.section-2 {
   font-family: "Courier New", Courier, monospace;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.541);
@@ -112,4 +116,13 @@
 .btn-primary-custom {
   background-color: #a9865b;
   padding: 10px 20px;
+}
+.color-secondary {
+  color: #a9865b !important;
+}
+.color-primary {
+  color: #634837 !important;
+}
+.img-transform {
+  transform: rotate(-15deg);
 }
