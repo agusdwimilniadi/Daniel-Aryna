@@ -114,8 +114,8 @@ export default function Section1() {
         </div>
       </section>
       <section className="section-2" style={{ backgroundColor: "#F7EEE6" }}>
-        <div className="container">
-          <div className="row " style={{ height: "100vh" }}>
+        <div className="container py-5">
+          <div className="row ">
             <div className="col-md-6 text-center d-flex align-items-center">
               <div className="mt-5">
                 <img
@@ -240,7 +240,7 @@ export default function Section1() {
                 </p>
               </div>
             </div>
-            <div className="col-md-12 text-center mb-5">
+            <div className="col-md-12 text-center ">
               <div style={{ paddingTop: "10%" }}>
                 <img
                   src="https://acarakami.com/wp-content/uploads/2020/10/icon-leaf-acarakami.svg"
@@ -259,11 +259,8 @@ export default function Section1() {
           </div>
         </div>
       </section>
-      <section
-        className="section-3"
-        style={{ height: "100vh", backgroundColor: "#634837" }}
-      >
-        <div className="container">
+      <section className="section-3" style={{ backgroundColor: "#634837" }}>
+        <div className="container py-5">
           <div className="row">
             <div className="col-md-12 text-center">
               <img

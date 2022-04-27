@@ -44,8 +44,7 @@
   font-family: "Playfair Display", serif !important;
 }
 .section-1,
-.section-0,
-.section-2 {
+.section-0 {
   font-family: "Courier New", Courier, monospace;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.541);
