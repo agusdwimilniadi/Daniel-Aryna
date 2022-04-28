@@ -1,3 +1,13 @@
+body {
+  background-image: url("https://wekita.id/wp-content/uploads/2022/04/22AD279-FOTO-8.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.575);
+}
+.bg-kotak {
+  background-image: url("https://wekita.id/wp-content/uploads/2021/07/oke-6.png");
+}
 .App {
   text-align: center;
 }
@@ -122,6 +132,60 @@
 .color-primary {
   color: #634837 !important;
 }
+.color-3rd {
+  color: #bf9b73 !important;
+}
 .img-transform {
   transform: rotate(-15deg);
+}
+.item {
+  transition: 0.5s ease-in-out;
+}
+.item:hover {
+  filter: brightness(80%);
+}
+
+.font-primary-new {
+  font-family: "Open Sans", Sans-serif;
+}
+.font-secondary-new {
+  font-family: "Great Vibes", Sans-serif;
+}
+.font-3rd-new {
+  font-family: "Satisfy", Sans-serif;
+}
+.font-4th-new {
+  font-family: "Lato", sans-serif;
+}
+
+.save-the-date {
+  background-color: transparent;
+}
+
+.bg-primary-new {
+  background-color: #8a6b57 !important;
+  border: transparent;
+}
+.carousel-inner .item img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.bg-undangan {
+  background-image: url("https://wekita.id/wp-content/uploads/2021/07/Picture1-4-1.png");
+  background-position: 50% center;
+  background-attachment: fixed;
+}
+.font-alata {
+  font-family: "Alata", sans-serif;
+}
+.btn-custom-undangan {
+  background-color: #a9865b;
+  border-radius: 20px;
+  padding: 7px 20px;
+  color: white;
+}
+.btn-custom-undangan:hover {
+  color: white;
+  background-color: #bea17e;
 }

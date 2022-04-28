@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import $ from "jquery";
 import daniel from "../image/daniel 1.png";
 import aryna from "../image/aryna 1.png";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export default function Section1() {
+  const [copy, setCopy] = useState(false);
+  const [copy2, setCopy2] = useState(false);
+
   function play() {
     var audio = document.getElementById("audio");
     audio.play();
   }
 
+  function onCopy() {
+    setCopy(true);
+    setTimeout(() => {
+      setCopy(false);
+    }, 1000);
+  }
+  function onCopy2() {
+    setCopy2(true);
+    setTimeout(() => {
+      setCopy2(false);
+    }, 1000);
+  }
   const fungsiOpen = () => {
     $(".section-0").animate(
       { textIndent: 0 },
@@ -116,6 +132,25 @@ export default function Section1() {
       <section className="section-2" style={{ backgroundColor: "#F7EEE6" }}>
         <div className="container py-5">
           <div className="row ">
+            <div className="col-md-12 text-center">
+              <img
+                src="https://wekita.id/wp-content/uploads/2021/07/bismillah.svg"
+                alt=""
+                className="img-fluid"
+              />
+              <h1 className="font-3rd-new my-3 color-secondary">
+                Assalamu'alaikum Wr. Wb.
+              </h1>
+              <div className="row">
+                <div className="col-12 ">
+                  <p className="font-primary fs-6">
+                    Tanpa mengurangi rasa hormat. Kami mengundang
+                    Bapak/Ibu/Saudara/i serta Kerabat sekalian untuk menghadiri
+                    acara pernikahan kami:
+                  </p>
+                </div>
+              </div>
+            </div>
             <div className="col-md-6 text-center d-flex align-items-center">
               <div className="mt-5">
                 <img
@@ -126,8 +161,8 @@ export default function Section1() {
                   style={{ borderRadius: "50%", border: "3px solid #A9865B" }}
                 />
                 <h1
-                  className="mt-3 text-center mb-3 fs-1"
-                  style={{ fontFamily: "Playfair Display", color: "#A9865B" }}
+                  className="mt-3 text-center mb-3 fs-1 font-secondary-new"
+                  style={{ color: "#A9865B" }}
                 >
                   Daniel Firman Syahroni
                 </h1>
@@ -142,11 +177,10 @@ export default function Section1() {
                 </p>
                 <p
                   style={{
-                    fontFamily: "Playfair Display",
-                    fontStyle: "italic",
+                    fontFamily: '"Numans", Sans-serif',
                     color: "#634837",
-                    fontSize: "25px",
-                    lineHeight: "0.8em",
+                    fontSize: "18px",
+                    lineHeight: "0.4em",
                     letterSpacing: "0.5px",
                   }}
                 >
@@ -154,11 +188,10 @@ export default function Section1() {
                 </p>
                 <p
                   style={{
-                    fontFamily: "Playfair Display",
-                    fontStyle: "italic",
+                    fontFamily: '"Numans", Sans-serif',
                     color: "#634837",
-                    fontSize: "25px",
-                    lineHeight: "0.8em",
+                    fontSize: "18px",
+                    lineHeight: "0.4em",
                     letterSpacing: "0.5px",
                   }}
                 >
@@ -166,11 +199,10 @@ export default function Section1() {
                 </p>
                 <p
                   style={{
-                    fontFamily: "Playfair Display",
-                    fontStyle: "italic",
+                    fontFamily: '"Numans", Sans-serif',
                     color: "#634837",
-                    fontSize: "25px",
-                    lineHeight: "0.8em",
+                    fontSize: "18px",
+                    lineHeight: "0.4em",
                     letterSpacing: "0.5px",
                   }}
                 >
@@ -188,8 +220,8 @@ export default function Section1() {
                   style={{ borderRadius: "50%", border: "3px solid #A9865B" }}
                 />
                 <h1
-                  className="mt-3 text-center mb-3 fs-1"
-                  style={{ fontFamily: "Playfair Display", color: "#A9865B" }}
+                  className="mt-3 text-center mb-3 fs-1 font-secondary-new"
+                  style={{ color: "#A9865B" }}
                 >
                   Aryna Chintya Devi
                 </h1>
@@ -204,11 +236,10 @@ export default function Section1() {
                 </p>
                 <p
                   style={{
-                    fontFamily: "Playfair Display",
-                    fontStyle: "italic",
+                    fontFamily: '"Numans", Sans-serif',
                     color: "#634837",
-                    fontSize: "25px",
-                    lineHeight: "0.8em",
+                    fontSize: "18px",
+                    lineHeight: "0.4em",
                     letterSpacing: "0.5px",
                   }}
                 >
@@ -216,11 +247,10 @@ export default function Section1() {
                 </p>
                 <p
                   style={{
-                    fontFamily: "Playfair Display",
-                    fontStyle: "italic",
+                    fontFamily: '"Numans", Sans-serif',
                     color: "#634837",
-                    fontSize: "25px",
-                    lineHeight: "0.8em",
+                    fontSize: "18px",
+                    lineHeight: "0.4em",
                     letterSpacing: "0.5px",
                   }}
                 >
@@ -228,11 +258,10 @@ export default function Section1() {
                 </p>
                 <p
                   style={{
-                    fontFamily: "Playfair Display",
-                    fontStyle: "italic",
+                    fontFamily: '"Numans", Sans-serif',
                     color: "#634837",
-                    fontSize: "25px",
-                    lineHeight: "0.8em",
+                    fontSize: "18px",
+                    lineHeight: "0.4em",
                     letterSpacing: "0.5px",
                   }}
                 >
@@ -259,91 +288,226 @@ export default function Section1() {
           </div>
         </div>
       </section>
+      <section className="save-the-date">
+        <div className="container-fluid">
+          <h1
+            className="p-5 m-0 text-center font-secondary-new text-white"
+            style={{ fontSize: "3rem" }}
+          >
+            Save the Date
+          </h1>
+        </div>
+      </section>
       <section className="section-3" style={{ backgroundColor: "#634837" }}>
         <div className="container py-5">
           <div className="row">
-            <div className="col-md-12 text-center">
-              <img
-                src="https://acarakami.com/wp-content/uploads/2020/10/icon-leaf-acarakami.svg"
-                alt=""
-                className="img-fluid my-4"
-              />
-              <p className="text-center font-primary text-white mb-4">
-                God Almighty mercy and blessing, we intend to hold a Wedding for
-                our son and daughter <br /> which, God willing, will be held on:
+            <div
+              className="col-8 offset-2 bg-white py-3 text-center bg-kotak shadow-lg "
+              style={{ borderRadius: "10px" }}
+            >
+              <h1 className=" font-secondary-new color-3rd mt-3">Akad Nikah</h1>
+              <h5 className="font-4th-new fw-bold fst-italic">
+                Kamis, 19 Mei 2022
+              </h5>
+              <p className="fst-italic">
+                Pukul 09.00 <br />
+                Alamat: Jalan Musi Nomor 3 Begadung, Nganjuk
               </p>
+            </div>
 
-              <div className="pt-4 ">
-                <h2 className="date fs-5">SUNDAY</h2>
-                <h2 className="date fs-5">19 / MEI / 2022</h2>
-                <img
-                  src="https://acarakami.com/wp-content/uploads/2020/10/icon-leaf-acarakami.svg"
-                  alt=""
-                  className="img-fluid my-4"
+            <div
+              className="col-8 offset-2 bg-white py-3 text-center bg-kotak mt-4 shadow-lg"
+              style={{ borderRadius: "10px" }}
+            >
+              <h1 className=" font-secondary-new color-3rd mt-3">Resepsi</h1>
+              <h5 className="font-4th-new fw-bold fst-italic">
+                Sabtu, 20 Mei 2022
+              </h5>
+              <p className="fst-italic">
+                Pukul 09.00 <br />
+                Alamat : Jalan Dahlia Desa Teken Glagahan, Loceret, Nganjuk
+              </p>
+            </div>
+            <div className="col-8 offset-2 py-3">
+              <div className="responsive-map text-center">
+                {/* eslint-disable-next-line jsx-a11y/iframe-has-title */}
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.1810922121664!2d111.90439704805608!3d-7.586137577596748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e784af87a1decb3%3A0x42eeffa78d89dad5!2zN8KwMzUnMTAuMiJTIDExMcKwNTQnMTUuMCJF!5e0!3m2!1sen!2sid!4v1651132696027!5m2!1sen!2sid"
+                  width="100%"
+                  height={450}
+                  style={{ border: "3px solid #A9865B", borderRadius: "10px" }}
+                  className="p-2"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                 />
-                <h2 className="date fs-5">TIME</h2>
-                <h2 className="date fs-5">10.00 WIB - FINISH</h2>
-                <img
-                  src="https://acarakami.com/wp-content/uploads/2020/10/icon-leaf-acarakami.svg"
-                  alt=""
-                  className="img-fluid my-4"
-                />
-                <h2 className="date fs-5">LOCATION</h2>
-                <h2 className="date fs-5">Jalan Musi Nomor 3 Begadung,</h2>
-                <h2 className="date fs-5 mb-5">
-                  Kecamatan Nganjuk, Kabupaten Nganjuk
-                </h2>
-                <p className="text-center font-primary text-white mb-4 mt-5">
-                  It is a joy and honor for us, if you are willing to give our
-                  children's blessings.
-                </p>
-                <p className="text-center font-primary text-white mb-4">
-                  We would be deeply grateful of your presence & blessings to
-                  our wedding
-                </p>
-                <img
-                  src="https://acarakami.com/wp-content/uploads/2020/10/icon-leaf-acarakami.svg"
-                  alt=""
-                  className="img-fluid my-4"
-                />
-                <h2 className="date fs-5">WE, THE HAPPY ONES</h2>
-                <p
-                  style={{
-                    fontFamily: "Playfair Display",
-                    fontStyle: "italic",
-                    fontSize: "18px",
-                    lineHeight: "0.8em",
-                    letterSpacing: "0.5px",
-                  }}
-                  className="text-white my-3"
-                >
-                  Family of Mr. Paryadi
-                </p>
-                <p
-                  style={{
-                    fontFamily: "Playfair Display",
-                    fontStyle: "italic",
-                    fontSize: "18px",
-                    lineHeight: "0.8em",
-                    letterSpacing: "0.5px",
-                  }}
-                  className="text-white my-3"
-                >
-                  &
-                </p>
-                <p
-                  style={{
-                    fontFamily: "Playfair Display",
-                    fontStyle: "italic",
-                    fontSize: "18px",
-                    lineHeight: "0.8em",
-                    letterSpacing: "0.5px",
-                  }}
-                  className="text-white my-3"
-                >
-                  Family of Mr. Sareh, M.Pd
-                </p>
               </div>
+              <div className="text-center">
+                <a
+                  href="https://goo.gl/maps/FUPXEu1BpMt5Y5Ar7"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary bg-primary-new mt-2"
+                >
+                  Lihat Lokasi
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="section-4"
+        style={{ backgroundColor: "#F7EEE6" }}
+      ></section>
+      <section className="section-4 m-0" style={{ backgroundColor: "#F7EEE6" }}>
+        <div className="container py-5 text-center m-auto">
+          <h1
+            className=" font-secondary-new color-3rd mt-3 mb-5"
+            style={{ fontSize: "3rem" }}
+          >
+            Gallery Photo
+          </h1>
+          <div
+            id="carouselExampleControls"
+            className="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div className="carousel-inner ">
+              <div className="carousel-item active">
+                <img
+                  src="https://wekita.id/wp-content/uploads/2022/04/22AD279-FOTO-1.jpg"
+                  className="d-block w-100 img-fluid rounded "
+                  alt="..."
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://wekita.id/wp-content/uploads/2022/04/22AD279-FOTO-2-1.jpg"
+                  className="d-block w-100 img-fluid rounded"
+                  alt="..."
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://wekita.id/wp-content/uploads/2022/04/22AD279-FOTO-3-1.jpg"
+                  className="d-block w-100 img-fluid rounded"
+                  alt="..."
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://wekita.id/wp-content/uploads/2022/04/22AD279-FOTO-4-1.jpg"
+                  className="d-block w-100 img-fluid rounded"
+                  alt="..."
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://wekita.id/wp-content/uploads/2022/04/22AD279-FOTO-8-1.jpg"
+                  className="d-block w-100 img-fluid rounded"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev"
+            >
+              <span className="carousel-control-prev-icon" aria-hidden="true" />
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="next"
+            >
+              <span className="carousel-control-next-icon" aria-hidden="true" />
+              <span className="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className="section-5 bg-undangan py-5 m-0">
+        <div className="container text-center">
+          <h1
+            className=" font-secondary-new color-primary "
+            style={{ fontSize: "3rem" }}
+          >
+            Amplop Digiital
+          </h1>
+          <div className="row">
+            <div className="col-8 offset-2">
+              <p className="font-alata fs-5 color-secondary">
+                Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.
+                <br />
+                Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat
+                memberi kado secara cashless.
+              </p>
+            </div>
+            <div
+              className="col-8 offset-2 py-4 bg-kotak shadow"
+              style={{ borderRadius: "10px" }}
+            >
+              <img
+                src="https://wekita.id/wp-content/uploads/2022/03/BSI-Bank-Syariah-Indonesia-Logo-PNG1080p-Vector69Com.png"
+                alt=""
+                width="40%"
+                className="img-fluid"
+              />
+              <hr />
+              <p className="font-alata fs-5 color-secondary">
+                No. Rekening : 1049084214
+              </p>
+              <CopyToClipboard text="1049084214" onCopy={onCopy}>
+                <span className="btn btn-custom-undangan">
+                  {copy ? "Berhasil disalin" : "Copy Text"}
+                </span>
+              </CopyToClipboard>
+              <p className="font-alata mt-3 fs-5 color-secondary">
+                A/n Daniel Firman S
+              </p>
+            </div>
+            <div
+              className="col-8 offset-2 py-4 bg-kotak shadow mt-5"
+              style={{ borderRadius: "10px" }}
+            >
+              <img
+                src="https://wekita.id/wp-content/uploads/2021/08/Bank-Jatim-Logo-PNG-480p-FileVector69.png"
+                alt=""
+                width="40%"
+                className="img-fluid"
+              />
+              <hr />
+              <p className="font-alata fs-5 color-secondary">
+                No. Rekening : 2032102126
+              </p>
+              <CopyToClipboard text="2032102126" onCopy={onCopy2}>
+                <span className="btn btn-custom-undangan">
+                  {copy2 ? "Berhasil disalin" : "Copy Text"}
+                </span>
+              </CopyToClipboard>
+              <p className="font-alata mt-3 fs-5 color-secondary">
+                A/n Aryna Chintya Devi
+              </p>
+            </div>
+            <div
+              className="col-8 offset-2 py-4 bg-kotak shadow mt-5"
+              style={{ borderRadius: "10px" }}
+            >
+              <h1 className="font-alata fs-5 color-secondary">Kirim Hadiah</h1>
+              <hr />
+              <p className="font-alata fs-5 color-secondary">
+                Nama Penerima : Aryna Chintya Devi
+                <br />
+                Nomor HP: 0858-1255-7541
+                <br />
+                Alamat : Jalan Musi Nomor 3, Begadung, Kecamatan Nganjuk,
+                Kabupaten Nganjuk
+              </p>
             </div>
           </div>
         </div>
