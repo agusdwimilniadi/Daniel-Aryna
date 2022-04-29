@@ -328,7 +328,7 @@ export default function Section1() {
                 Alamat : Jalan Dahlia Desa Teken Glagahan, Loceret, Nganjuk
               </p>
             </div>
-            <div className="col-8 offset-2 py-3">
+            <div className="col-12  py-3">
               <div className="responsive-map text-center">
                 {/* eslint-disable-next-line jsx-a11y/iframe-has-title */}
                 <iframe
@@ -508,6 +508,74 @@ export default function Section1() {
                 Alamat : Jalan Musi Nomor 3, Begadung, Kecamatan Nganjuk,
                 Kabupaten Nganjuk
               </p>
+            </div>
+            <div className="col-8 offset-2 py-4 bg-kotak shadow mt-5">
+              <h1
+                className="font-secondary-new fw-bold color-primary"
+                style={{ fontFamily: "Philosopher" }}
+              >
+                HEALTH PROTOCOL
+              </h1>
+              <p className="mb-5">
+                Guna mencegah penyebaran Covid-19, diharapkan bagi tamu undangan
+                untuk mematuhi Protokol Kesehatan di bawah ini :
+              </p>
+              <div className="row">
+                <div className="col-4">
+                  <img
+                    src="https://wekita.id/wp-content/uploads/2021/07/01-14-1.png"
+                    alt=""
+                    className="img-fluid"
+                    width="50%"
+                  />
+                  <h5 className="my-4 color-primary">Cuci Tangan</h5>
+                </div>
+                <div className="col-4">
+                  <img
+                    src="https://wekita.id/wp-content/uploads/2021/07/04-15.png"
+                    alt=""
+                    className="img-fluid"
+                    width="50%"
+                  />
+                  <h5 className="my-4 color-primary">Gunakan Masker</h5>
+                </div>
+                <div className="col-4">
+                  <img
+                    src="https://wekita.id/wp-content/uploads/2021/07/06-3.png"
+                    alt=""
+                    className="img-fluid"
+                    width="50%"
+                  />
+                  <h5 className="my-4 color-primary">Jaga Jarak</h5>
+                </div>
+                <div className="col-4">
+                  <img
+                    src="https://wekita.id/wp-content/uploads/2021/07/05-10.png"
+                    alt=""
+                    className="img-fluid"
+                    width="50%"
+                  />
+                  <h5 className="my-4 color-primary">Tidak Bersalaman</h5>
+                </div>
+                <div className="col-4">
+                  <img
+                    src="https://wekita.id/wp-content/uploads/2021/07/02-15-1.png"
+                    alt=""
+                    className="img-fluid"
+                    width="50%"
+                  />
+                  <h5 className="my-4 color-primary">Gunakan Handsanitizer</h5>
+                </div>
+                <div className="col-4">
+                  <img
+                    src="https://wekita.id/wp-content/uploads/2021/07/03-9.png"
+                    alt=""
+                    className="img-fluid"
+                    width="50%"
+                  />
+                  <h5 className="my-4 color-primary">Hindari Kerumuman</h5>
+                </div>
+              </div>
             </div>
           </div>
         </div>
