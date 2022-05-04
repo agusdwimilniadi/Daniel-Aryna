@@ -4,16 +4,66 @@ import $ from "jquery";
 import daniel from "../image/daniel 1.png";
 import aryna from "../image/aryna 1.png";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { gql, useMutation } from "@apollo/client";
+import swal from "sweetalert";
 
+const InsertUcapan = gql`
+  mutation MyMutation(
+    $nama_undangan: String = ""
+    $pesan: String = ""
+    $kehadiran: String = false
+  ) {
+    insert_ucapan_nikah_one(
+      object: {
+        nama_undangan: $nama_undangan
+        pesan: $pesan
+        kehadiran: $kehadiran
+      }
+    ) {
+      id
+      nama_undangan
+      pesan
+    }
+  }
+`;
 export default function Section1() {
   const [copy, setCopy] = useState(false);
   const [copy2, setCopy2] = useState(false);
-
+  const [insertUcapan, { loading: loadingInsert }] = useMutation(InsertUcapan);
   function play() {
     var audio = document.getElementById("audio");
     audio.play();
   }
 
+  const [dataUcapan, setDataUcapan] = useState({
+    namaUndangan: "",
+    kehadiran: "",
+    ucapan: "",
+  });
+  const onChangeData = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setDataUcapan({
+      ...dataUcapan,
+      [name]: value,
+    });
+    console.log(dataUcapan);
+  };
+  const onSubmit = async () => {
+    await insertUcapan({
+      variables: {
+        nama_undangan: dataUcapan.namaUndangan,
+        pesan: dataUcapan.ucapan,
+        kehadiran: dataUcapan.kehadiran,
+      },
+    });
+    swal("Berhasil", "Pesan ucapan berhasil dikirim", "success");
+    setDataUcapan({
+      namaUndangan: "",
+      kehadiran: "",
+      ucapan: "",
+    });
+  };
   function onCopy() {
     setCopy(true);
     setTimeout(() => {
@@ -269,22 +319,6 @@ export default function Section1() {
                 </p>
               </div>
             </div>
-            <div className="col-md-12 text-center ">
-              <div style={{ paddingTop: "10%" }}>
-                <img
-                  src="https://acarakami.com/wp-content/uploads/2020/10/icon-leaf-acarakami.svg"
-                  alt=""
-                  className="img-fluid "
-                />
-                <p className="font-primary text-center color-primary mt-3">
-                  "Dan segala sesuatu Kami ciptakan berpasang-pasangan supaya
-                  kamu mengingat kebesaran Allah"
-                </p>
-                <p className="font-secondary color-secondary">
-                  QS. Az-Zariyat Ayat 49
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -321,11 +355,11 @@ export default function Section1() {
             >
               <h1 className=" font-secondary-new color-3rd mt-3">Resepsi</h1>
               <h5 className="font-4th-new fw-bold fst-italic">
-                Sabtu, 20 Mei 2022
+                Kamis, 19 Mei 2022
               </h5>
               <p className="fst-italic">
                 Pukul 09.00 <br />
-                Alamat : Jalan Dahlia Desa Teken Glagahan, Loceret, Nganjuk
+                Alamat: Jalan Musi Nomor 3 Begadung, Nganjuk
               </p>
             </div>
             <div className="col-12  py-3">
@@ -441,7 +475,7 @@ export default function Section1() {
           </h1>
           <div className="row">
             <div className="col-8 offset-2">
-              <p className="font-alata fs-5 color-secondary">
+              <p className="font-alata fs-custom-5 color-secondary fs-md-6">
                 Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.
                 <br />
                 Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat
@@ -459,7 +493,7 @@ export default function Section1() {
                 className="img-fluid"
               />
               <hr />
-              <p className="font-alata fs-5 color-secondary">
+              <p className="font-alata fs-custom-5 color-secondary">
                 No. Rekening : 1049084214
               </p>
               <CopyToClipboard text="1049084214" onCopy={onCopy}>
@@ -467,7 +501,7 @@ export default function Section1() {
                   {copy ? "Berhasil disalin" : "Copy Text"}
                 </span>
               </CopyToClipboard>
-              <p className="font-alata mt-3 fs-5 color-secondary">
+              <p className="font-alata mt-3 fs-custom-5 color-secondary">
                 A/n Daniel Firman S
               </p>
             </div>
@@ -482,7 +516,7 @@ export default function Section1() {
                 className="img-fluid"
               />
               <hr />
-              <p className="font-alata fs-5 color-secondary">
+              <p className="font-alata fs-custom-5 color-secondary">
                 No. Rekening : 2032102126
               </p>
               <CopyToClipboard text="2032102126" onCopy={onCopy2}>
@@ -490,7 +524,7 @@ export default function Section1() {
                   {copy2 ? "Berhasil disalin" : "Copy Text"}
                 </span>
               </CopyToClipboard>
-              <p className="font-alata mt-3 fs-5 color-secondary">
+              <p className="font-alata mt-3 fs-custom-5 color-secondary">
                 A/n Aryna Chintya Devi
               </p>
             </div>
@@ -498,9 +532,11 @@ export default function Section1() {
               className="col-8 offset-2 py-4 bg-kotak shadow mt-5"
               style={{ borderRadius: "10px" }}
             >
-              <h1 className="font-alata fs-5 color-secondary">Kirim Hadiah</h1>
+              <h1 className="font-alata fs-custom-5 color-secondary">
+                Kirim Hadiah
+              </h1>
               <hr />
-              <p className="font-alata fs-5 color-secondary">
+              <p className="font-alata fs-custom-5 color-secondary">
                 Nama Penerima : Aryna Chintya Devi
                 <br />
                 Nomor HP: 0858-1255-7541
@@ -521,7 +557,7 @@ export default function Section1() {
                 untuk mematuhi Protokol Kesehatan di bawah ini :
               </p>
               <div className="row">
-                <div className="col-4">
+                <div className="col-md-4">
                   <img
                     src="https://wekita.id/wp-content/uploads/2021/07/01-14-1.png"
                     alt=""
@@ -530,7 +566,7 @@ export default function Section1() {
                   />
                   <h5 className="my-4 color-primary">Cuci Tangan</h5>
                 </div>
-                <div className="col-4">
+                <div className="col-md-4">
                   <img
                     src="https://wekita.id/wp-content/uploads/2021/07/04-15.png"
                     alt=""
@@ -539,7 +575,7 @@ export default function Section1() {
                   />
                   <h5 className="my-4 color-primary">Gunakan Masker</h5>
                 </div>
-                <div className="col-4">
+                <div className="col-md-4">
                   <img
                     src="https://wekita.id/wp-content/uploads/2021/07/06-3.png"
                     alt=""
@@ -548,7 +584,7 @@ export default function Section1() {
                   />
                   <h5 className="my-4 color-primary">Jaga Jarak</h5>
                 </div>
-                <div className="col-4">
+                <div className="col-md-4">
                   <img
                     src="https://wekita.id/wp-content/uploads/2021/07/05-10.png"
                     alt=""
@@ -557,7 +593,7 @@ export default function Section1() {
                   />
                   <h5 className="my-4 color-primary">Tidak Bersalaman</h5>
                 </div>
-                <div className="col-4">
+                <div className="col-md-4">
                   <img
                     src="https://wekita.id/wp-content/uploads/2021/07/02-15-1.png"
                     alt=""
@@ -566,7 +602,7 @@ export default function Section1() {
                   />
                   <h5 className="my-4 color-primary">Gunakan Handsanitizer</h5>
                 </div>
-                <div className="col-4">
+                <div className="col-md-4">
                   <img
                     src="https://wekita.id/wp-content/uploads/2021/07/03-9.png"
                     alt=""
@@ -576,6 +612,149 @@ export default function Section1() {
                   <h5 className="my-4 color-primary">Hindari Kerumuman</h5>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="save-the-date">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-center py-5 text-white">
+              <div>
+                <img
+                  src="https://acarakami.com/wp-content/uploads/2020/10/icon-leaf-acarakami.svg"
+                  alt=""
+                  className="img-fluid "
+                />
+                <p className="font-primary fs-custom-5 text-center mt-3">
+                  "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
+                  untukmu isteri-isteri dari jenismu sendiri, supaya kamu
+                  cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya
+                  diantaramu rasa kasih dan sayang. Sesungguhnya pada yang
+                  demikian itu benar-benar terdapat tanda-tanda bagi kaum yang
+                  berfikir."
+                </p>
+                <p className="font-secondary fs-custom-5">(Q.S Ar Rum : 21)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section-5 bg-undangan py-5  m-0">
+        <div className="container ">
+          <h1
+            className="font-secondary-new fw-bold color-primary text-center"
+            style={{ fontFamily: "Philosopher" }}
+          >
+            Ucapkan Sesuatu
+          </h1>
+          <h4
+            className="font-secondary-new fw-normal color-primary text-center"
+            style={{ fontFamily: "Philosopher" }}
+          >
+            Berikan Ucapan dan Doa Restu
+          </h4>
+          <div className="row">
+            <div
+              className="col-8 offset-2 py-4 bg-kotak shadow mt-5"
+              style={{ borderRadius: "10px" }}
+            >
+              <div>
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Nama Anda"
+                    name="namaUndangan"
+                    onChange={onChangeData}
+                    value={dataUcapan.namaUndangan}
+                  />
+                </div>
+                <div className="mb-3">
+                  <textarea
+                    className="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows={3}
+                    defaultValue={""}
+                    placeholder="Berikan ucapan dan Doa"
+                    name="ucapan"
+                    onChange={onChangeData}
+                    value={dataUcapan.ucapan}
+                  />
+                </div>
+                <div className="mb-3">
+                  <select
+                    className="form-select"
+                    aria-label="Default select example"
+                    name="kehadiran"
+                    onChange={onChangeData}
+                    value={dataUcapan.kehadiran}
+                  >
+                    <option selected disabled value="">
+                      Konfirmasi Kehadiran
+                    </option>
+                    <option value={true}>Hadir</option>
+                    <option value={false}>Tidak Hadir</option>
+                  </select>
+                </div>
+                <div className="mb-3">
+                  <button
+                    className="btn btn-custom-undangan"
+                    onClick={onSubmit}
+                    disabled={
+                      dataUcapan.kehadiran === "" ||
+                      dataUcapan.namaUndangan === "" ||
+                      dataUcapan.ucapan === ""
+                        ? true
+                        : false
+                    }
+                  >
+                    {loadingInsert ? (
+                      <>
+                        <span
+                          class="spinner-border spinner-border-sm"
+                          role="status"
+                          aria-hidden="true"
+                        ></span>
+                        {"     "}
+                        Tungu sebentar...
+                      </>
+                    ) : (
+                      "Kirim"
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section-6 bg-undangan  py-5 m-0">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-center position-relative">
+              <img
+                src="https://wekita.id/wp-content/uploads/2022/04/22AD279-ak.png"
+                alt=""
+                className="img-fluid position-relative img-responsive-size"
+              />
+              <p
+                className="font-primary fs-custom-5 text-center mt-3  "
+                style={{ padding: "0px 50px" }}
+              >
+                Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
+                Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
+                <br />
+                Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.
+              </p>
+              <br />
+              <h1 className="font-3rd-new my-3 color-secondary ">
+                Wassalamu'alaikum Wr. Wb.
+              </h1>
+              <h1 className="font-secondary-new my-3 text-dark fs-1 ">
+                Daniel & Aryna
+              </h1>
             </div>
           </div>
         </div>

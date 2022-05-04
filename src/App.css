@@ -189,3 +189,20 @@ body {
   color: white;
   background-color: #bea17e;
 }
+
+.fs-custom-5 {
+  font-size: 22px;
+}
+.img-responsive-size {
+  width: 30%;
+}
+@media (max-width: 767.98px) {
+  .fs-custom-5 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 991.98px) {
+  .img-responsive-size {
+    width: 60%;
+  }
+}
