@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import $ from "jquery";
 import daniel from "../image/daniel 1.png";
 import aryna from "../image/aryna 1.png";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import { gql, useMutation, useSubscription } from "@apollo/client";
 import swal from "sweetalert";
 
@@ -41,7 +40,6 @@ const InsertUcapan = gql`
   }
 `;
 export default function Section1() {
-  const [copy2, setCopy2] = useState(false);
   const [insertUcapan, { loading: loadingInsert }] = useMutation(InsertUcapan);
   const { data: dataUcapanSubs } = useSubscription(SubscriptionUcapan);
   function play() {
@@ -81,12 +79,6 @@ export default function Section1() {
     });
   };
 
-  function onCopy2() {
-    setCopy2(true);
-    setTimeout(() => {
-      setCopy2(false);
-    }, 1000);
-  }
   const fungsiOpen = () => {
     $(".section-0").animate(
       { textIndent: 0 },
@@ -106,7 +98,7 @@ export default function Section1() {
       <section
         className="section-0 "
         style={{
-          backgroundImage: `url('image/1.jpeg')`,
+          backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/investa-image-upload.appspot.com/o/ArynaDaniel%2F1.jpeg?alt=media&token=018f92cc-e5df-450b-ace9-f8e3c173f55d')`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
@@ -482,62 +474,7 @@ export default function Section1() {
       </section>
       <section className="section-5 bg-undangan py-5 m-0">
         <div className="container text-center">
-          <h1
-            className=" font-secondary-new color-primary "
-            style={{ fontSize: "3rem" }}
-          >
-            Amplop Digiital
-          </h1>
           <div className="row">
-            <div className="col-8 offset-2">
-              <p className="font-alata fs-custom-5 color-secondary fs-md-6">
-                Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.
-                <br />
-                Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat
-                memberi kado secara cashless.
-              </p>
-            </div>
-
-            <div
-              className="col-8 offset-2 py-4 bg-kotak shadow mt-5"
-              style={{ borderRadius: "10px" }}
-            >
-              <img
-                src="https://wekita.id/wp-content/uploads/2021/08/Bank-Jatim-Logo-PNG-480p-FileVector69.png"
-                alt=""
-                width="40%"
-                className="img-fluid"
-              />
-              <hr />
-              <p className="font-alata fs-custom-5 color-secondary">
-                No. Rekening : 2032102126
-              </p>
-              <CopyToClipboard text="2032102126" onCopy={onCopy2}>
-                <span className="btn btn-custom-undangan">
-                  {copy2 ? "Berhasil disalin" : "Copy Text"}
-                </span>
-              </CopyToClipboard>
-              <p className="font-alata mt-3 fs-custom-5 color-secondary">
-                A/n Aryna Chintya Devi
-              </p>
-            </div>
-            <div
-              className="col-8 offset-2 py-4 bg-kotak shadow mt-5"
-              style={{ borderRadius: "10px" }}
-            >
-              <h1 className="font-alata fs-custom-5 color-secondary">
-                Kirim Hadiah
-              </h1>
-              <hr />
-              <p className="font-alata fs-custom-5 color-secondary">
-                Nama Penerima : Aryna Chintya Devi
-                <br />
-                Nomor HP: 0858-1255-7541
-                <br />
-                Alamat : Jalan Musi Nomor 3, Begadung, Kecamatan Nganjuk,
-                Kabupaten Nganjuk
-              </p>
-            </div>
             <div className="col-8 offset-2 py-4 bg-kotak shadow mt-5">
               <h1
                 className="font-secondary-new fw-bold color-primary"
@@ -649,7 +586,7 @@ export default function Section1() {
           </h4>
           <div className="row">
             <div
-              className="col-10 offset-1 py-4 bg-kotak shadow mt-5"
+              className="col-8 offset-2 py-4 bg-kotak shadow mt-5"
               style={{ borderRadius: "10px" }}
             >
               <div>
@@ -803,113 +740,6 @@ export default function Section1() {
                   </div>
                 </div>
               </div>
-              {/* CARUSELL */}
-              {/* <div
-                id="carouselExampleControls2"
-                className="carousel slide"
-                data-bs-ride="carousel"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <div className="row">
-                      <div className="col-8 offset-2">
-                        <div className="mt-5">
-                          <div
-                            className="card mx-auto"
-                            style={{ width: "18rem" }}
-                          >
-                            <div className="card-body">
-                              <h5 className="card-title">
-                                Nama : Agus Dwi Milniadi
-                              </h5>
-                              <h6 className="card-subtitle mb-2 text-muted">
-                                Alamat : Begadung
-                              </h6>
-                              <p className="card-text">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Ducimus delectus saepe
-                                recusandae.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="carousel-item">
-                    <div className="row">
-                      <div className="col-8 offset-2">
-                        <div className="mt-5">
-                          <div
-                            className="card mx-auto"
-                            style={{ width: "18rem" }}
-                          >
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <h6 className="card-subtitle mb-2 text-muted">
-                                Card subtitle
-                              </h6>
-                              <p className="card-text">
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="carousel-item">
-                    <div className="row">
-                      <div className="col-8 offset-2">
-                        <div className="mt-5">
-                          <div
-                            className="card mx-auto"
-                            style={{ width: "18rem" }}
-                          >
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <h6 className="card-subtitle mb-2 text-muted">
-                                Card subtitle
-                              </h6>
-                              <p className="card-text">
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button
-                  className="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#carouselExampleControls2"
-                  data-bs-slide="prev"
-                >
-                  <span
-                    className="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  />
-                  <span className="visually-hidden">Previous</span>
-                </button>
-                <button
-                  className="carousel-control-next"
-                  type="button"
-                  data-bs-target="#carouselExampleControls2 "
-                  data-bs-slide="next"
-                >
-                  <span
-                    className="carousel-control-next-icon"
-                    aria-hidden="true"
-                  />
-                  <span className="visually-hidden">Next</span>
-                </button>
-              </div> */}
             </div>
           </div>
         </div>
