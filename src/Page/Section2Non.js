@@ -142,7 +142,7 @@ export default function Section1() {
           <div className="text-center">
             <h3 className="pt-5 heading-1-0">Hello</h3>
             <div className="pt-2 name-1 text-white " onClick={play}>
-              <h1>
+              <h1 className="text-uppercase">
                 {params === "" ? "" : params?.undangan?.split("-").join(" ")}
               </h1>
             </div>
