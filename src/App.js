@@ -10,9 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Section1 />} />
         <Route path="/m" element={<Section2Non />} />
-        <Route path="/m/:undangan" element={<Section2Non />} />
-
         <Route path="/:undangan" element={<Section1 />} />
+        <Route path="/m/:undangan" element={<Section2Non />} />
         <Route path="/admin/ucapan" element={<Ucapan />} />
       </Routes>
     </>

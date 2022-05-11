@@ -6,6 +6,7 @@ import aryna from "../image/aryna 1.png";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { gql, useMutation, useSubscription } from "@apollo/client";
 import swal from "sweetalert";
+import Countdown from "./Countdown";
 
 const SubscriptionUcapan = gql`
   subscription MySubscription {
@@ -179,10 +180,7 @@ export default function Section1() {
             </div>
             <div className="px-2">
               <div className="container">
-                <ul
-                  class="countdown d-flex justify-content-center p-0 text-center  color-secondary-cstm"
-                  data-countdown="2022/05/19"
-                ></ul>
+                <Countdown></Countdown>
               </div>
               <a
                 href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NTN0cW1iZzMyZTIwcXBnbTRlYnU5aWh2MXIgYWd1c2R3aW1pbGxAbQ&tmsrc=agusdwimill%40gmail.com"

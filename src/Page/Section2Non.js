@@ -93,6 +93,39 @@ export default function Section1() {
     play();
   };
   const params = useParams();
+  const [dayss, setDayss] = useState("");
+  const [hourss, setHourss] = useState("");
+  const [minutess, setMinutess] = useState("");
+  const [secondss, setSecondss] = useState("");
+  var countDownDate = new Date("May 19, 2022 10:00:00").getTime();
+
+  // Memperbarui hitungan mundur setiap 1 detik
+  var x = setInterval(function () {
+    // Untuk mendapatkan tanggal dan waktu hari ini
+    var now = new Date().getTime();
+
+    // Temukan jarak antara sekarang dan tanggal hitung mundur
+    var distance = countDownDate - now;
+
+    // Perhitungan waktu untuk hari, jam, menit dan detik
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    setDayss(days);
+    var hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    setHourss(hours);
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    setMinutess(minutes);
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    setSecondss(seconds);
+    // Keluarkan hasil dalam elemen dengan id = "demo"
+
+    // Jika hitungan mundur selesai, tulis beberapa teks
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
   return (
     <>
       <section
@@ -174,7 +207,24 @@ export default function Section1() {
                 <ul
                   class="countdown d-flex justify-content-center p-0 text-center  color-secondary-cstm"
                   data-countdown="2022/05/19"
-                ></ul>
+                >
+                  <li>
+                    <span id="dayss">{dayss}</span>
+                    <p>Hari</p>
+                  </li>
+                  <li>
+                    <span id="hourss">{hourss}</span>
+                    <p>Jam</p>
+                  </li>
+                  <li>
+                    <span id="minutess">{minutess}</span>
+                    <p>Menit</p>
+                  </li>
+                  <li>
+                    <span id="secondss">{secondss}</span>
+                    <p>Detik</p>
+                  </li>
+                </ul>
               </div>
               <a
                 href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NTN0cW1iZzMyZTIwcXBnbTRlYnU5aWh2MXIgYWd1c2R3aW1pbGxAbQ&tmsrc=agusdwimill%40gmail.com"
