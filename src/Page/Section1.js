@@ -410,7 +410,7 @@ export default function Section1() {
               </h5>
               <p className="fst-italic">
                 Pukul 09.00 WIB <br />
-                Alamat: Jalan Musi Nomor 3 Begadung, Nganjuk
+                Alamat: Jalan Musi Nomor 3 Begadung , Nganjuk
               </p>
             </div>
 
@@ -584,8 +584,8 @@ export default function Section1() {
                 <br />
                 Nomor HP: 0858-1255-7541
                 <br />
-                Alamat : Jalan Musi Nomor 3, Begadung, Kecamatan Nganjuk,
-                Kabupaten Nganjuk
+                Alamat : Jalan Musi Nomor 3, Begadung RT 01/ RW 05, Kecamatan
+                Nganjuk, Kabupaten Nganjuk
               </p>
             </div>
             <div className="col-8 offset-2 py-4 bg-kotak shadow mt-5">

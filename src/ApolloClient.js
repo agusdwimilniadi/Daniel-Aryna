@@ -6,20 +6,20 @@ import { split, HttpLink } from "@apollo/client";
 import { getMainDefinition } from "@apollo/client/utilities";
 
 const httpLink = new HttpLink({
-  uri: "https://helped-warthog-70.hasura.app/v1/graphql",
+  uri: "https://vital-robin-88.hasura.app/v1/graphql",
   headers: {
     "x-hasura-admin-secret":
-      "HqdJen83H787isEbWhXT84gHpPzguluMXnf1kyPmPyPljWg6Tx8CbDzCV5vXiS6J",
+      "7v5PjbTFVZv2gEnoJNqIDp4xPj4c4delZ09qSIzijXyBkAfqBLD1yOM9Nha68PZd",
   },
 });
 
 const wsLink = new GraphQLWsLink(
   createClient({
-    url: "wss://helped-warthog-70.hasura.app/v1/graphql",
+    url: "wss://vital-robin-88.hasura.app/v1/graphql",
     connectionParams: {
       headers: {
         "x-hasura-admin-secret":
-          "HqdJen83H787isEbWhXT84gHpPzguluMXnf1kyPmPyPljWg6Tx8CbDzCV5vXiS6J",
+          "7v5PjbTFVZv2gEnoJNqIDp4xPj4c4delZ09qSIzijXyBkAfqBLD1yOM9Nha68PZd",
       },
     },
   })

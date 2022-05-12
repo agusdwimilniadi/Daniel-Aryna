@@ -402,7 +402,7 @@ export default function Section1() {
               </h5>
               <p className="fst-italic">
                 Pukul 09.00 WIB <br />
-                Alamat: Jalan Musi Nomor 3 Begadung, Nganjuk
+                Alamat: Jalan Musi Nomor 3 Begadung , Nganjuk
               </p>
             </div>
 
