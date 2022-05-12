@@ -410,7 +410,7 @@ export default function Section1() {
               </h5>
               <p className="fst-italic">
                 Pukul 09.00 WIB <br />
-                Alamat: Jalan Musi Nomor 3 Begadung , Nganjuk
+                Alamat: Jalan Musi Nomor 3 Begadung RT 01/ RW 05 , Nganjuk
               </p>
             </div>
 
@@ -424,7 +424,7 @@ export default function Section1() {
               </h5>
               <p className="fst-italic">
                 Pukul 12.00-15.00 WIB <br />
-                Alamat: Jalan Musi Nomor 3 Begadung, Nganjuk
+                Alamat: Jalan Musi Nomor 3 Begadung RT 01/ RW 05, Nganjuk
               </p>
             </div>
             <div className="col-12  py-3">
